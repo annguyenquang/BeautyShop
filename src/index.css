@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kalnia+Glaze:wght@100..700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-light-1: #fbbdbb;
+  --color-light-2: #e9acb6;
+  --color-light-3: #f2c8d7;
+  --color-light-4: #feaed2;
+  --color-light-5: #ff5bb1;
+  --color-light-6: #f8e2ea;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Josefin Sans'; */
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+.dancing-script {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* -----------------------------------------------Navbar Style --------------------------------------------------------- */
+
+/* --------- Sale Header --------*/
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* -------- Navbar Slider ------ */
+@media (max-width: 950px) {
+  .slide-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide-image {
+    max-width: 45vw;
+    height: 20vh;
+  }
+
+  .slide-text-content {
+    width: 80%;
+    text-align: center;
+  }
+
+  .additional-image {
+    width: 10%;
+    height: 35%;
+  }
+
+  .slide-button {
+    padding: 0.5vw 1vw;
+    /* background-color: black;
+    color: white; */
+    text-decoration: none;
+    border-radius: 0.5vw;
+    font-size: 2vw;
+  }
+
+  .logoANDname {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ------------------------------------------------ Body Style ------------------------------------------------------- */
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* font-family: "Playwrite DE Grund", cursive; */
+  width: 100%;
+  height: 10vh;
+  margin: 0 auto;
+}
+
+.heading hr {
+  width: 15%;
+  height: 4px;
+  outline: none;
+  border: none;
+  border-radius: 90px;
+}
+
+.heading h2 {
+  /* font-family: "Playwrite DE Grund", cursive; */
+  /* font-weight: 900; */
+  /* font-family: "Playwrite DE Grund", cursive; */
+  /* font-family: "Montserrat", sans-serif; */
+  /* font-family: 'Josefin Sans'; */
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 1.5%;
+  text-align: center;
+}
+
+.heading .hr-right {
+  border-radius: 10px 0px 0px 10px;
+  background: linear-gradient(to left, #e9acb600, #e9acb646, #ff919d, #e93550);
+}
+
+.heading .hr-left {
+  border-radius: 0px 10px 10px 0px;
+  background: linear-gradient(to right, #e9acb600, #e9acb646, #ff919d, #e93550);
+}
+
+.subheading {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 767px) {
+  .heading hr {
+    width: 80px;
+    height: 3px;
+    outline: none;
+    border: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 0.8rem;
+  }
+
+  .heading h2 {
+    font-size: 1.2rem;
+  }
+
+  .subheading {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .heading {
+    font-size: 0.57rem;
+    text-align: center;
+  }
+
+  .subheading {
+    /* font-size: .5rem; */
+    text-align: center;
+  }
+}
+
+/* ----------------------------------------------- Footer Style ------------------------------------------------------- */
+
+footer {
+  /* border-top-left-radius: 50px; */
+  /* border-top-right-radius: 50px; */
+  font-family: "Josefin Sans";
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-position: center; */
+  /* --color-back: #ffffffa0[]; */
+  /* background-image: url('assets/OurTeam/1.jpg'); */
+  /* background: linear-gradient(to bottom, #ffffff 40%, #f43f5e); */
+  /* background: #ffe4e6; */
+  /* background: rgb(220, 217, 217) */
+  /* background: white; */
+    /* background:radial-gradient(#f1f1f1, #a4a4a4) */
+}
+
+/* .col_[data-footer-part]>ul>li>.footerList {
+  text-decoration: none;
+  color: #573c43;
+}
+
+.col_[data-footer-part]>ul>li>.footerList:hover {
+  text-decoration: underline;
+} */
+
+.socialIcons[data-footer-part] {
+  text-align: center;
+  font-size: 30px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.socialIcons[data-footer-part] > a {
+  text-decoration: none;
+  color: #4c0519;
+}
+
+.copyright[data-footer-part] {
+  text-align: center;
+}
+
+.btnShow {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  /* footer[data-footer-part] {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+  } */
+
+  .col_[data-footer-part] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col_[data-footer-part]:first-child {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: row-reverse;
+
+    justify-content: space-between;
+  }
+
+  .col_[data-footer-part]:first-child > .logo > img {
+    margin-top: 2em;
+  }
+
+  .col_[data-footer-part]:first-child > ul > li {
+    background-size: 16px 16px;
+    background-position: 0% 40%;
+  }
+
+  .col_[data-footer-part] > .drpBtn {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+    border-bottom: 1px solid grey;
+    justify-content: space-between;
+  }
+
+  .col_[data-footer-part] > h3 {
+    cursor: pointer;
+  }
+
+  .col_[data-footer-part] > ul {
+    margin-left: 15px;
+  }
+
+  .col_[data-footer-part] > .close {
+    display: none;
+  }
+
+  .col_[data-footer-part] > .all_Items,
+  .btnShow {
+    display: block;
+  }
+}
+
+/* -------------------------------------------- Our Team Page Style ------------------------------------------------------- */
+
+/* Slide In */
+@keyframes slide_in {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+/* Slide Out */
+@keyframes slide_out {
+  from {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+  }
+}
+
+/* Reverse Slide In */
+@keyframes revslide_in {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+/* Reverse Slide Out */
+@keyframes revslide_out {
+  from {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+  }
+}
+
+.our_team .slidein {
+  animation: slide_in 1s ease-in-out forwards;
+}
+
+.our_team .slideout {
+  animation: slide_out 1s ease-in-out forwards;
+}
+
+.our_team .revslidein {
+  animation: revslide_in 1s ease-in-out backwards;
+}
+
+.our_team .revslideout {
+  animation: revslide_out 1s ease-in-out backwards;
+}
+
+.our_team .hide-image {
+  visibility: hidden;
+  display: none;
+}
+
+.our_team .swiper-scrollbar {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.179);
+}
+
+.our_team .text-shadow-md-white {
+  text-shadow: 0 0 6px white;
+}
+
+.our_team .tint:hover + .bg-zoom-out {
+  transform: 0.9;
+}
+
+/* -------------------------------------------- Careers Page Style ------------------------------------------------------- */
+
+@media (min-width:1024px) {
+  .coreItem:nth-child(4){
+    grid-column: 1/3;
+    margin-left: 25%;
+    width: 50%;
+  }
+  .coreItem:nth-child(5){
+    grid-column: 3/4;
+    margin-left: -55%;
+    width: 90%;
+  }
+}
