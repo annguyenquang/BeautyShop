@@ -87,8 +87,8 @@ const CardItem = ({ item }) => {
                   className="h-full w-full object-center object-cover transition duration-200 group-hover:scale-110"
                 />
 
-                <div className="absolute left-0 top-0 right-0 px-3 py-1.5 flex items-center justify-between text-white">
-                  <p className="text-xs text-rose-600 bg-white px-2 py-1 rounded-full">
+                <div className="absolute left-0 top-0 right-0 px-3 py-1.5 flex items-center justify-between">
+                  <p className="text-xs font-bold text-[#E11D48] bg-[#EBE700] px-2 py-1 rounded-full">
                     {" "}
                     {p.discount}% OFF{" "}
                   </p>
