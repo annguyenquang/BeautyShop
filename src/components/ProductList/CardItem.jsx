@@ -164,6 +164,11 @@ const CardItem = ({ item }) => {
                   </button>
                 </div>
               </div>
+              <div className="flex justify-end pt-1 pe-4">
+                <button className="btn bg-slate-300 py-1 px-2 rounded text-[0.7rem] sm:text-[0.8rem]">
+                  Add to Comparision List
+                </button>
+              </div>
             </div>
           );
         })}
