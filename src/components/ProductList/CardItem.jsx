@@ -47,12 +47,12 @@ const CardItem = ({ item }) => {
   // Comparison functions
   const addToComparison = (product) => {
     if (comparisonList.length >= 3) {
-      alert("Danh sách so sánh đã đủ 3 sản phẩm!");
+      alert("The comparison list already has 3 products!");
       setIsComparisonModalOpen(true);
       return;
     }
     if (comparisonList.find(item => item.id === product.id)) {
-      alert("Sản phẩm đã được thêm vào danh sách so sánh!");
+      alert("The product has been added to the comparison list!");
     } else {
       const newList = [...comparisonList, product];
       setComparisonList(newList);
@@ -140,7 +140,7 @@ const CardItem = ({ item }) => {
                   ))}
                 </div>
 
-                {comparisonList.map((product) => (
+                {comparisonList.map((product, index) => (
                   <div key={product.id} className="flex-1 flex-col flex items-center">
                     <div className="relative">
                       <img
@@ -159,18 +159,40 @@ const CardItem = ({ item }) => {
                     <div className="mt-4">{product.category}</div>
                     <div className="mt-4">{product.brands}</div>
                     <div className="mt-4">
-                      • Micelles
+                      {index === 0 ? "• Micelles" : index === 1 ? "• Hyaluronic Acid" : "• Beta Hydroxy Acid"}
                     </div>
-                    <div className="mt-4">{product.benefits || 'Removes makeup, gently cleanses.'}</div>
+                    <div className="mt-4 text-center">
+                      {index === 0 ? "Removes makeup, gently cleanses" : index === 1 ? "Deep hydration, restores skin barrier" : "Gently exfoliates, reduces oil, prevents clogged pores"}
+                    </div>
                     <div className="mt-4">${product.price}</div>
                     <div className="mt-4 text-center">
-                      {product.targetUsers || (
-                        <>
-                          All skin types, especially sensitive skin.
-                          <br />
-                          Suitable for those who need daily cleansing without dryness.
-                        </>
-                      )}
+                      {index === 0 ?
+                        (
+                          <>
+                            All skin types, especially sensitive skin. Suitable for
+                            <br />
+                            those who need daily cleansing without dryness.
+                          </>
+                        )
+                        : index === 1 ?
+                          (
+                            <>
+                              Dry, sensitive skin. Ideal for
+                              people needing
+                              <br />
+                              long-lasting hydration
+                              and repair for damaged skin.</>
+                          )
+                          :
+                          (
+                            <>
+                              Oily, acne-prone, or normal skin.
+                              Designed for
+                              <br />
+                              those seeking to remove
+                              dead skin cells and reduce acne.</>
+                          )
+                      }
                     </div>
                     <Link to={`/product-description/${product.id}`}>
                       <button
