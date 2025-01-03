@@ -1,25 +1,34 @@
 import { CartContext } from "../context/CartContext";
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react';
-import { XMarkIcon } from '@heroicons/react/24/outline';
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+} from "@headlessui/react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { RiDeleteBin6Line, RiDiscountPercentLine } from "react-icons/ri";
 import { FaStar, FaChevronRight } from "react-icons/fa6";
-import allItemData from '../components/ProductList/ProductListItemData';
+import allItemData from "../components/ProductList/ProductListItemData";
 
 export default function Cart() {
-// <<<<<<< Deepanshu
-  
-//   const {open,setOpen} = useContext(CartContext);
-  
-// =======
+  // <<<<<<< Deepanshu
+
+  //   const {open,setOpen} = useContext(CartContext);
+
+  // =======
   const { subCartItemNumber } = useContext(CartContext);
-  const [arrayOfCartItemId, setArrayOfCartItemId] = useState(JSON.parse(localStorage.getItem("Item-Id")) || []);
+  const [arrayOfCartItemId, setArrayOfCartItemId] = useState(
+    JSON.parse(localStorage.getItem("Item-Id")) || []
+  );
   const [cartItemData, setCartItemData] = useState([]);
   const [itemData, setItemData] = useState(allItemData);
 
   useEffect(() => {
-    const modifiedCartData = itemData.filter((val) => arrayOfCartItemId.includes(val.id));
+    const modifiedCartData = itemData.filter((val) =>
+      arrayOfCartItemId.includes(val.id)
+    );
     setCartItemData(modifiedCartData);
     const gv = JSON.parse(localStorage.getItem("Item-Id")) || [];
     if (gv !== arrayOfCartItemId) {
@@ -47,16 +56,21 @@ export default function Cart() {
   const handleDecrease = (id) => {
     setItemData((prevItems) =>
       prevItems.map((item) =>
-        item.id === id ? { ...item, quantity: Math.max(item.quantity - 1, 0) } : item
+        item.id === id
+          ? { ...item, quantity: Math.max(item.quantity - 1, 0) }
+          : item
       )
     );
   };
 
-  const total = cartItemData.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+  const total = cartItemData.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
 
   const { open, setOpen } = useContext(CartContext);
 
-// >>>>>>> main
+  // >>>>>>> main
   return (
     <Dialog open={open} onClose={setOpen} className="relative z-50">
       <DialogBackdrop
@@ -73,7 +87,9 @@ export default function Cart() {
               <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                 <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
                   <div className="flex items-start justify-between">
-                    <DialogTitle className="text-lg font-medium text-gray-900">Shopping cart</DialogTitle>
+                    <DialogTitle className="text-lg font-medium text-gray-900">
+                      Shopping cart
+                    </DialogTitle>
                     <div className="ml-3 flex h-7 items-center">
                       <button
                         type="button"
@@ -88,8 +104,11 @@ export default function Cart() {
                   </div>
                   <div className="mt-8">
                     <div className="flow-root">
-                      <ul role="list" className="-my-6 divide-y divide-gray-200">
-                        {cartItemData && cartItemData.length > 0 ?
+                      <ul
+                        role="list"
+                        className="-my-6 divide-y divide-gray-200"
+                      >
+                        {cartItemData && cartItemData.length > 0 ? (
                           cartItemData.map((item) => (
                             <li key={item.id} className="flex py-6">
                               <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -104,27 +123,46 @@ export default function Cart() {
                                     <h3>
                                       <a>{item.name}</a>
                                     </h3>
-                                    <p className="ml-4">₹{item.price}</p>
+                                    <p className="ml-4">${item.price}</p>
                                   </div>
-                                  <p className="mt-1 text-sm text-gray-500">{item.color}</p>
+                                  <p className="mt-1 text-sm text-gray-500">
+                                    {item.color}
+                                  </p>
                                 </div>
                                 <div className="flex flex-1 items-end justify-between text-sm">
                                   <div className="flex items-center gap-2 text-sm">
-                                    <button onClick={() => handleDecrease(item.id)} className="border rounded px-2 py-1">-</button>
+                                    <button
+                                      onClick={() => handleDecrease(item.id)}
+                                      className="border rounded px-2 py-1"
+                                    >
+                                      -
+                                    </button>
                                     <span>{item.quantity}</span>
-                                    <button onClick={() => handleIncrease(item.id)} className="border rounded px-2 py-1">+</button>
+                                    <button
+                                      onClick={() => handleIncrease(item.id)}
+                                      className="border rounded px-2 py-1"
+                                    >
+                                      +
+                                    </button>
                                   </div>
                                   <div className="flex">
-                                    <button onClick={() => toRemoveItemFromCart(item.id)} type="button" className="font-medium text-indigo-600 hover:text-indigo-500">
+                                    <button
+                                      onClick={() =>
+                                        toRemoveItemFromCart(item.id)
+                                      }
+                                      type="button"
+                                      className="font-medium text-indigo-600 hover:text-indigo-500"
+                                    >
                                       Remove
                                     </button>
                                   </div>
                                 </div>
                               </div>
                             </li>
-                          )) :
+                          ))
+                        ) : (
                           <div>No data!</div>
-                        }
+                        )}
                       </ul>
                     </div>
                   </div>
@@ -132,21 +170,23 @@ export default function Cart() {
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-gray-900">
                     <p>Subtotal</p>
-                    <p>₹{total.toFixed(2)}</p>
+                    <p>${total.toFixed(2)}</p>
                   </div>
-                  <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                  <p className="mt-0.5 text-sm text-gray-500">
+                    Shipping and taxes calculated at checkout.
+                  </p>
                   <div className="mt-6">
                     <Link
                       to={"/checkoutpage"}
-                      className="flex items-center justify-center rounded-md border border-transparent bg-rose-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-rose-700" onClick={()=>setOpen(false)}
-
+                      className="flex items-center justify-center rounded-md border border-transparent bg-rose-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-rose-700"
+                      onClick={() => setOpen(false)}
                     >
                       Checkout
                     </Link>
                   </div>
                   <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                     <p>
-                      or{' '}
+                      or{" "}
                       <button
                         type="button"
                         className="font-medium text-indigo-600 hover:text-indigo-500"

@@ -51,7 +51,7 @@ import Lips from "./Shop_By_Category/Lips.webp";
 import Eyes from "./Shop_By_Category/Eyes.webp";
 import Hair from "./Shop_By_Category/Hair.png";
 import Perfume from "./Shop_By_Category/Perfume.png";
-export {default as Serum} from "./Shop_By_Category/serum.png";
+export { default as Serum } from "./Shop_By_Category/serum.png";
 export { default as Shampoo } from "./Shop_By_Category/shampoo.png";
 export { default as Sunscreen } from "./Shop_By_Category/sunscreen.png";
 export { default as Lipsticks } from "./Shop_By_Category/lipstick.png";
@@ -153,7 +153,6 @@ export { default as brand_23 } from "./brand_3.png";
 // nars
 export { default as brand_24 } from "./brand_4.png";
 
-
 export { default as brand_1 } from "./brand_1.png";
 export { default as brand_3 } from "./brand-3.png";
 export { default as brand_4 } from "./brand-4.png";
@@ -178,6 +177,7 @@ export { default as SnapInc } from "./CareersPage/snapinc.svg";
 export { default as Mobile_app } from "./mobile_app.webp";
 export { default as Apple } from "./apple.png";
 export { default as Google } from "./google.png";
+export { default as ChatBoxImg } from "./chatbox.png";
 
 export { default as b1 } from "./TopCategories/best-seller-1.png";
 export { default as b2 } from "./TopCategories/best-seller-2.png";
@@ -234,7 +234,7 @@ export { default as coll9 } from "./Gallery/coll9.png";
 export { default as coll10 } from "./Gallery/coll10.png";
 // export { default as coll11 } from "./Gallery/coll11.png";
 
-export {default as FBG} from './OurTeam/1.jpg'
+export { default as FBG } from "./OurTeam/1.jpg";
 
 export const imageUrls = [
   {
