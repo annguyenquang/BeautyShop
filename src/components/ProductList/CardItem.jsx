@@ -232,7 +232,7 @@ const CardItem = ({ item }) => {
               onClick={handleCompareClick}
               className="mt-4 bg-[#800020] text-white px-4 py-2 rounded-lg w-full hover:bg-[#600018] transition-colors"
             >
-              Add to comparison list
+              View
             </button>
           )}
         </div>
