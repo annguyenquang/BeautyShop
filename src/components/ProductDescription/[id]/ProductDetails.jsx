@@ -169,10 +169,10 @@ const ProductDetails = () => {
                   <div class="flex flex-wrap gap-4 items-start">
                     <div>
                       <p class="text-gray-800 text-4xl font-bold">
-                        ₹ {productDetail.price}
+                        $ {productDetail.price}
                       </p>
                       <p class="text-gray-500 text-sm mt-2">
-                        <strike>₹ {productDetail.price * 1.5}</strike>{" "}
+                        <strike>$ {productDetail.price * 1.5}</strike>{" "}
                         <span class="text-sm ml-1">Tax included</span>
                       </p>
                     </div>

@@ -13,7 +13,7 @@
 //       { text: 'View Order', class: 'text-black border-black border hover:bg-pink-100 mr-[20px] rounded-[50px]' },
 //       { text: 'Write A Review', class: 'text-white bg-rose-400 hover:bg-white hover:text-black border rounded-[50px]' }
 //     ],
-//     price:'₹599/-'
+//     price:'$599/-'
 //   },
 //   {
 //     status: 'Cancelled',
@@ -27,7 +27,7 @@
 //       { text: 'View Order', class: 'text-black border-black border hover:bg-pink-100 mr-[20px] rounded-[50px]' },
 //       { text: 'Write A Review', class: 'text-white bg-rose-400 hover:bg-white hover:text-black border rounded-[50px]' }
 //     ],
-//     price:'₹599/-'
+//     price:'$599/-'
 //   },
 //   {
 //     status: 'In Progress',
@@ -41,7 +41,7 @@
 //       { text: 'View Order', class: 'text-black border-black border hover:bg-pink-100 mr-[20px] rounded-[50px]' },
 //       { text: 'Write A Review', class: 'text-white bg-rose-400 hover:bg-white hover:text-black border rounded-[50px]' }
 //     ],
-//     price:'₹599/-'
+//     price:'$599/-'
 //   },
 // ];
 

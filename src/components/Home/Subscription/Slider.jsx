@@ -154,7 +154,6 @@ const Slider = () => {
         breakpoints={{
           425: {
             slidesPerView: 2,
-
           },
           600: {
             slidesPerView: 3,
@@ -168,7 +167,6 @@ const Slider = () => {
             slidesPerView: 5,
             spaceBetween: 20,
           },
-
         }}
         modules={[Navigation, Pagination]}
         className="mySwiper  w-[95%] relative px-12 md:px-9 py-6 "
@@ -196,7 +194,9 @@ const Slider = () => {
               <div className="flex flex-col items-start">
                 <div className="">
                   {/* Product Name */}
-                  <p className=" text-rose-950 text-sm md:text-base pt-1 font-medium">{data.name} product</p>
+                  <p className=" text-rose-950 text-sm md:text-base pt-1 font-medium">
+                    {data.name} product
+                  </p>
                   {/* StarIcons */}
                   <div className="flex text-[10px] md:text-xs  text-[#f5911e]">
                     {[...Array(Math.floor(data.rating))].map((_, i) => (
@@ -218,14 +218,15 @@ const Slider = () => {
                 </div>
                 {/* Pricings */}
                 <div className="flex gap-2">
-                  <p className="text-sm md:text-lg py-2 font-medium text-rose-800"><span className="text-xs align-text-top">₹</span>
-                    {data.price}/-</p>
+                  <p className="text-sm md:text-lg py-2 font-medium text-rose-800">
+                    <span className="text-xs align-text-top">$</span>
+                    {data.price}/-
+                  </p>
                   <p className="text-xs text-slate-400 self-center ">
-
                     <span className="text-emerald-600 pr-1">
                       {(data.price / data.original_price) * 100}%
                     </span>
-                    <del className="text-[10px]">₹{data.original_price}/-</del>
+                    <del className="text-[10px]">${data.original_price}/-</del>
                   </p>
                 </div>
               </div>

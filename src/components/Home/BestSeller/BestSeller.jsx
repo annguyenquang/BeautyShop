@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 // import styles from "./BestSeller.module.css";
-import { b1, b2, imageUrls, product_11, product_13, product_14, img1 } from "../../../assets/assets";
+import {
+  b1,
+  b2,
+  imageUrls,
+  product_11,
+  product_13,
+  product_14,
+  img1,
+} from "../../../assets/assets";
 import { LiaShoppingCartSolid, LiaHeart } from "react-icons/lia";
 import "swiper/css";
 // import "swiper/css/pagination";
@@ -8,9 +16,8 @@ import "swiper/css/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
-//import MaintennacePage from '../../pages/MaintennacePage'; 
-import { Link } from 'react-router-dom';
-
+//import MaintennacePage from '../../pages/MaintennacePage';
+import { Link } from "react-router-dom";
 
 const trending = imageUrls.slice(0, imageUrls.length / 2);
 const newArrivals = imageUrls.slice(imageUrls.length / 2);
@@ -29,22 +36,19 @@ const BestSeller = () => {
 
   return (
     <>
-
       <div className="heading flex justify-center items-center">
         <hr className="bg-gradient-to-l from-rose-700" data-aos="fade-right" />
-        <h2 className="text-xl text-nowrap text-center" data-aos="fade-up">Best Seller</h2>
+        <h2 className="text-xl text-nowrap text-center" data-aos="fade-up">
+          Best Seller
+        </h2>
         <hr className="bg-gradient-to-r from-rose-700" data-aos="fade-left" />
       </div>
 
-      <p
-        className='text-center text-lg font-normal text-slate-400'
-      >
+      <p className="text-center text-lg font-normal text-slate-400">
         Your Cosmetics and Skincare Products
       </p>
 
-      <div
-        className='my-10 mx-auto text-center'
-      >
+      <div className="my-10 mx-auto text-center">
         {["trending", "newArrivals"].map((cat, idx) => (
           <button
             key={cat}
@@ -53,15 +57,16 @@ const BestSeller = () => {
               backgroundColor: selectedCategory === cat ? "#be123c" : "#fff",
               color: selectedCategory === cat ? "#fff" : "#be123c",
             }}
-            className={`${idx === 0 ? "first rounded-s-lg" : "second rounded-e-lg"
-              } text-xs md:text-sm transition-all py-1 md:py-2 px-4 md:px-12  font-semibold shadow shadow-slate-400`}
+            className={`${
+              idx === 0 ? "first rounded-s-lg" : "second rounded-e-lg"
+            } text-xs md:text-sm transition-all py-1 md:py-2 px-4 md:px-12  font-semibold shadow shadow-slate-400`}
           >
             {cat === "trending" ? "Trending Now" : "New Arrivals"}
           </button>
         ))}
       </div>
 
-      <div className='bg-rose-50'>
+      <div className="bg-rose-50">
         <Swiper
           slidesPerView={1}
           spaceBetween={20}
@@ -81,10 +86,12 @@ const BestSeller = () => {
               key={index}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className='bg-white rounded-lg shadow-xl h-[17rem] md:h-[20rem] overflow-hidden cursor-pointer transition-[0.9s_ease]'
-
+              className="bg-white rounded-lg shadow-xl h-[17rem] md:h-[20rem] overflow-hidden cursor-pointer transition-[0.9s_ease]"
             >
-              <Link to={`/product/${data.Name}`} className="h-[70%] block overflow-hidden">
+              <Link
+                to={`/product/${data.Name}`}
+                className="h-[70%] block overflow-hidden"
+              >
                 <img
                   onMouseEnter={() => setHoveredImageIndex(index)}
                   onMouseLeave={() => setHoveredImageIndex(null)}
@@ -99,9 +106,7 @@ const BestSeller = () => {
                 />
               </Link>
               {/* hover icons */}
-              <div
-                className='absolute left-[90%] top-12 -translate-x-[50%] -translate-y-[50%] flex flex-col z-10 transition-[0.9s] gap-3'
-              >
+              <div className="absolute left-[90%] top-12 -translate-x-[50%] -translate-y-[50%] flex flex-col z-10 transition-[0.9s] gap-3">
                 <button
                   title="Add to cart"
                   className="cursor-pointer translate-x-[100px]"
@@ -123,7 +128,6 @@ const BestSeller = () => {
                   {data.Name}
                 </p>
                 <div className="flex px-2 justify-between">
-
                   {/* StarIcons
                   <div className="pb-2 gap-[0.02em] flex items-center text-[#f5911e]">
                     {[...Array(Math.floor(data.rating))].map((_, i) => (
@@ -146,7 +150,7 @@ const BestSeller = () => {
                   {/* Pricings */}
                   <div className="flex flex-col ">
                     <p className="text-sm md:text-lg font-semibold text-rose-800">
-                      <span className="text-xs align-top">₹</span>
+                      <span className="text-xs align-top">$</span>
                       {data.Price}/-
                     </p>
                     <p className="text-[11px] text-slate-400">
@@ -154,19 +158,21 @@ const BestSeller = () => {
                         {(data.Price / data.Original_Price) * 100}%
                       </span>
                       <del className="text-[10px]">
-                        ₹{data.Original_Price}/-
+                        ${data.Original_Price}/-
                       </del>
                     </p>
                   </div>
 
                   {/* Buynow btn */}
                   <Link to="/">
-                    <Link to={'/maintennace'} className="bg-rose-700 rounded text-xs md:text-md text-white text-nowrap p-2 font-medium cursor-pointer hover:bg-rose-600">
+                    <Link
+                      to={"/maintennace"}
+                      className="bg-rose-700 rounded text-xs md:text-md text-white text-nowrap p-2 font-medium cursor-pointer hover:bg-rose-600"
+                    >
                       Buy Now
                     </Link>
                   </Link>
                 </div>
-
               </div>
             </SwiperSlide>
           ))}
