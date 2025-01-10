@@ -18,14 +18,14 @@ import SearchBoxMob from "./SearchBoxMob";
 import Cart from "../../../shoppingCart/Cart";
 import { WishlistContext } from "../../../context/WishlistContext";
 import { CartContext } from "../../../context/CartContext";
-import Divueens from "../../../assets/Divueens3.jpg";
+import Skinbidi from "../../../assets/Skinbidi.png";
 import { AuthContext } from "../../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 const Navbar1 = ({ navItemText }) => {
   const { numCartItem, setOpen } = useContext(CartContext);
-  const { numWishItem } = useContext(WishlistContext)
-  const { autherisation } = useContext(AuthContext)
+  const { numWishItem } = useContext(WishlistContext);
+  const { autherisation } = useContext(AuthContext);
   const [openDropdown, setOpenDropdown] = useState(false);
   const [displayProfile, setDisplayProfile] = useState(false);
   const [displayAuth, setDisplayAuth] = useState(false);
@@ -84,7 +84,12 @@ const Navbar1 = ({ navItemText }) => {
               src={Divueens}
               alt="Description"
             /> */}
-          <img className="w-[100px] h-[60px] md:w-[120px] md:h-[80px] object-cover" src={Divueens} alt="Description" onClick={() => navigate("/")} />
+          <img
+            className="w-[100px] h-[60px] md:w-[120px] md:h-[80px] object-cover"
+            src={Skinbidi}
+            alt="Description"
+            onClick={() => navigate("/")}
+          />
 
           {/* </Link> */}
         </div>
@@ -99,7 +104,12 @@ const Navbar1 = ({ navItemText }) => {
               </div>
 
               <div className="hidden lg:flex space-x-5 ml-4 text-slate-500">
-                <NavLink onClick={() => { setOpen(true) }} className={`relative`}>
+                <NavLink
+                  onClick={() => {
+                    setOpen(true);
+                  }}
+                  className={`relative`}
+                >
                   <FiShoppingCart
                     size={18}
                     className="relative hover:text-rose-800"
@@ -121,11 +131,13 @@ const Navbar1 = ({ navItemText }) => {
                 </NavLink>
                 {/* <NavLink to='/profile'> */}
 
-                <NavLink to={autherisation ? '/profile' : ''}>
+                <NavLink to={autherisation ? "/profile" : ""}>
                   <FiUser
                     size={18}
                     className="hover:text-rose-800"
-                    onClick={() => { autherisation ? '' : setDisplayAuth(true) }}
+                    onClick={() => {
+                      autherisation ? "" : setDisplayAuth(true);
+                    }}
                   />
                 </NavLink>
 
@@ -162,7 +174,12 @@ const Navbar1 = ({ navItemText }) => {
                     </button>
 
                     <div className="w-full flex space-x-4 justify-center my-2">
-                      <NavLink onClick={() => { setOpen(true) }} className={`relative`}>
+                      <NavLink
+                        onClick={() => {
+                          setOpen(true);
+                        }}
+                        className={`relative`}
+                      >
                         <FiShoppingCart className="w-8 h-8 p-2 text-lg border border-rose-400 text-rose-400 rounded-full" />
                         {numCartItem > 0 && (
                           <div className="absolute rounded-full top-[-10px] right-[-10px] w-[15px] h-[15px] bg-rose-600 text-white flex items-center justify-center text-xs">
@@ -179,9 +196,11 @@ const Navbar1 = ({ navItemText }) => {
                           </div>
                         )}
                       </NavLink>
-                      <NavLink to={autherisation ? '/profile' : ''}>
+                      <NavLink to={autherisation ? "/profile" : ""}>
                         <FiUser
-                          onClick={() => autherisation ? '' : setDisplayAuth(true)}
+                          onClick={() =>
+                            autherisation ? "" : setDisplayAuth(true)
+                          }
                           className="w-8 h-8 p-2 text-lg border border-rose-400 text-rose-400 rounded-full"
                         />
                       </NavLink>
